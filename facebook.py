@@ -14,10 +14,8 @@ browser          = mechanicalsoup.StatefulBrowser()
 loginPage        = browser.open('http://facebook.com/login.php')
 APP_ROOT = os.path.dirname(os.path.abspath(__file__))
 #Data login
-#emailUser        = input('Input email   : ')
-#passUser         = getpass.getpass('Input password: ')
-emailUser        = 'ericgarcia080@gmail.com'
-passUser         = 'ericelcrak2'
+emailUser        = input('Input email   : ')
+passUser         = getpass.getpass('Input password: ')
 #Login data fill
 def login():
     print('[+] Logging...')
@@ -38,6 +36,7 @@ def select_photo():
     print(getProfile.get_current_page().findAll('input',class_='_n _5f0v'))
     upload[0]['name']   = os.path.join(APP_ROOT,'grap3.jpg')
     target = upload['name']
+    print(target)
     uploadFinal      = browser.post(target,profile.url)
     print(uploadFinal)
 
